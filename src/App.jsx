@@ -1,26 +1,27 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Features from './components/Features'
+import Showcase from './components/Showcase'
+import CTA from './components/CTA'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="bg-black min-h-screen">
+      <Navbar />
+      <Hero />
+      <Features />
+      <Showcase />
+      <CTA />
+      <footer className="bg-black text-white/60">
+        <div className="mx-auto max-w-7xl px-6 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <p className="text-sm">© {new Date().getFullYear()} Maison Élyseum — Tous droits réservés.</p>
+          <div className="flex gap-6 text-sm">
+            <a href="#" className="hover:text-white">Mentions légales</a>
+            <a href="#" className="hover:text-white">Confidentialité</a>
+            <a href="#" className="hover:text-white">Contact</a>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
